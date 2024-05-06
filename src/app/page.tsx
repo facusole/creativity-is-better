@@ -7,13 +7,6 @@ import Footer from "./components/Footer"
 
 export default function Home() {
 
-  const lenis = new Lenis()
-
-  function raf(time: any) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
-  }
-  requestAnimationFrame(raf)
 
   return (
     <main className="[&>section]:p-24 [&>section]:grid [&>section]:place-items-center [&>*:nth-child(even)]:bg-[#191919] relative">
