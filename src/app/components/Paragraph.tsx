@@ -19,13 +19,14 @@ export default function Paragraph( { value }: ParagraphProps  ) {
     const words = value.split(" ")
 
     return (
-        <p className="text-white text-7xl leading-tight flex flex-wrap relat" ref={element}>
+        <p className="text-white text-7xl leading-tight flex flex-wrap relative" ref={element}>
             {
                 words.map( (word, i) => {
                     const start = i / words.length;
                     const end = start + ( 1 / words.length )
 
                     return <span key={i} className="relative mr-4">
+                        <span className="absolute opacity-20">{word}</span>
                         <Word range={[start,end]} progress={scrollYProgress}>{word}</Word>
                     </span>
                 })
