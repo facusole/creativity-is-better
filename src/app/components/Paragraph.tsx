@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef } from "react"
+import { ReactNode, useRef } from "react"
 import { useScroll, motion, useTransform } from "framer-motion"
 
 type ParagraphProps = {
@@ -24,17 +24,26 @@ export default function Paragraph( { value }: ParagraphProps  ) {
                 words.map( (word, i) => {
                     const start = i / words.length;
                     const end = start + ( 1 / words.length )
-                    const range = [start, end]
-                    const progress = scrollYProgress
-                    const opacity = useTransform(progress, range, [0,1])
 
                     return <span key={i} className="relative mr-4">
-                        <span className="absolute opacity-20">{word}</span>
-                        <motion.span style={{opacity: opacity}}>{word}</motion.span>
+                        <Word range={[start,end]} progress={scrollYProgress}>{word}</Word>
                     </span>
                 })
             }
         </p>
     )
 
+}
+
+type WordProps = {
+    children: ReactNode
+    range: Array<number>
+    progress: any
+}
+
+const Word = ({ children, range, progress }: WordProps) => {
+    const opacity = useTransform(progress, range, [0,1])
+    return (
+        <motion.span style={{opacity: opacity}}>{children}</motion.span>
+    )
 }

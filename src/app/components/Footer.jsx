@@ -18,7 +18,6 @@ export default function Footer() {
         })
     }, [])
 
-    
 
     return (
         <footer ref={container}>
@@ -46,7 +45,7 @@ const Logos = ({scrollProgress}) => {
             <motion.div style={{y}} className="h-full bg-black flex justify-center gap-10 items-center p-10">
                 {
                     [...Array(3)].map((_, i) => {
-                        return <a href={links[i]} target="_blank" rel="noopener noreferrer"><img key={`img_${i}`} className={`w-[80px] h-[80px] ${ i % 2 == 0 ? 'invert' : ''} scale-105 transition-all`} src={`/${i+1}.svg`} /></a>
+                        return <a key={`img_${i}`} href={links[i]} target="_blank" rel="noopener noreferrer"><img key={`img_${i}`} className={`w-[80px] h-[80px] ${ i % 2 == 0 ? 'invert' : ''} scale-105 transition-all`} src={`/${i+1}.svg`} /></a>
                     })
                 }
             </motion.div>
