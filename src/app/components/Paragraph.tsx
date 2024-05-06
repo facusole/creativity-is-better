@@ -19,7 +19,7 @@ export default function Paragraph( { value }: ParagraphProps  ) {
     const words = value.split(" ")
 
     return (
-        <p className="text-white text-7xl leading-tight flex flex-wrap relative" ref={element}>
+        <p className="text-white text-[5dvh] leading-tight flex flex-wrap relative" ref={element}>
             {
                 words.map( (word, i) => {
                     const start = i / words.length;
