@@ -18,6 +18,8 @@ export default function Footer() {
         })
     }, [])
 
+    
+
     return (
         <footer ref={container}>
             <svg className="w-full mb-40" viewBox="0 0 250 90">

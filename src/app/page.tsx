@@ -9,36 +9,11 @@ export default function Home() {
 
   const lenis = new Lenis()
 
-  function raf(time: number) {
+  function raf(time: any) {
     lenis.raf(time)
     requestAnimationFrame(raf)
   }
-
   requestAnimationFrame(raf)
-
-    const svgAnimation = {
-      initial: {
-        opacity: 0
-      },
-      animate: {
-        opacity: 1
-      }
-    }
-
-    const pathAnimation = {
-      initial: {
-        opacity: 0,
-        pathLength: 0,
-      },
-      animate: {
-        opacity: 1,
-        pathLegth: 1,
-        transition: {
-          duration: 2,
-          ease: "easeInOut"
-        }
-      }
-    }
 
   return (
     <main className="[&>section]:p-24 [&>section]:grid [&>section]:place-items-center [&>*:nth-child(even)]:bg-[#191919] relative">
