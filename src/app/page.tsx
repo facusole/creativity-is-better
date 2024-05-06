@@ -3,11 +3,22 @@ import Lenis from "lenis";
 import { motion } from "framer-motion"
 import Paragraph from "./components/Paragraph";
 import Footer from "./components/Footer"
+import { useEffect } from "react";
 
 
 export default function Home() {
 
+  useEffect(() => {
+    const lenis = new Lenis()
 
+    function raf(time: any) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+    requestAnimationFrame(raf)  
+  }, [])
+
+  
   return (
     <main className="[&>section]:p-24 [&>section]:grid [&>section]:place-items-center [&>*:nth-child(even)]:bg-[#191919] relative">
       <section className="h-screen w-screen relative overflow-hidden">
