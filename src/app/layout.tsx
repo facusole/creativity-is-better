@@ -2,11 +2,19 @@ import type { Metadata } from "next";
 import { Prata } from "next/font/google";
 import "./globals.css";
 
-const prata = Prata({ subsets:["latin"], weight: ["400"] });
+const prata = Prata({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
   title: "Be creative!",
-  description: "Small project that plays with Framer motion functionalities to add nice and smooth animations",
+  description:
+    "Small project that plays with Framer motion functionalities to add nice and smooth animations",
+  icons: {
+    icon: [
+      {
+        url: "/favicon.ico",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
